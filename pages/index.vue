@@ -1,3 +1,14 @@
 <template>
-  <h1>Hello, world!</h1>
+  <div>
+    <h1>Welcome!</h1>
+    <nuxt-link to="/about">About Page</nuxt-link>
+  </div>
 </template>
+
+<script>
+export default {
+  head: {
+    title: 'Home Page'
+  }
+}
+</script>
