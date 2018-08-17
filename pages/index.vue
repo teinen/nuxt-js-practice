@@ -1,14 +1,26 @@
 <template>
-  <div>
-    <h1>Welcome!</h1>
-    <nuxt-link to="/about">About Page</nuxt-link>
+  <div class="container">
+    <p>Hello {{ name }}!</p>
+    <nuxt-link to="/about">Go to /about</nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
-  head: {
-    title: 'Home Page'
+  asyncData () {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ name: 'world' })
+      }, 1000)
+    })
   }
 }
 </script>
+
+<style scoped>
+.container {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 100px;
+}
+</style>

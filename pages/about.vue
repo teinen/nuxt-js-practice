@@ -1,19 +1,26 @@
 <template>
-  <div>
-    <p>Hi from {{ name }}</p>
-    <nuxt-link to="/">HomePage</nuxt-link>
+  <div class="container">
+    <p>About Page</p>
+    <nuxt-link to="/">Go to /</nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
   asyncData () {
-    return {
-      name: process.static ? 'static' : (process.server ? 'server' : 'client')
-    }
-  },
-  head: {
-    title: 'About page'
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve()
+      }, 1000)
+    })
   }
 }
 </script>
+
+<style scoped>
+.container {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 100px;
+}
+</style>
