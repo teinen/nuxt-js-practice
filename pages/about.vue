@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <p>About Page</p>
-    <nuxt-link to="/">Go to /</nuxt-link>
+    <h1 class="title">Another Page</h1>
+    <p><nuxt-link to="/" class="button is-medium is-info hvr-wobble-vertical">Another button</nuxt-link></p>
+    <p><nuxt-link to="/">Back home</nuxt-link></p>
   </div>
 </template>
 
@@ -16,11 +17,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.container {
-  font-size: 20px;
-  text-align: center;
-  padding-top: 100px;
-}
-</style>
