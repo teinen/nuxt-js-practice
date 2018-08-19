@@ -17,5 +17,8 @@ module.exports = {
       }
     }
   },
+  router: {
+    middleware: ['visits', 'user-agent']
+  }
   // loading: '~/components/loading.vue'
 }
