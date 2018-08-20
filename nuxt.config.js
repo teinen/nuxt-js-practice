@@ -20,6 +20,13 @@ module.exports = {
   router: {
     middleware: ['visits', 'user-agent']
   },
+  build: {
+    vendor: ['vue-notifications']
+  },
+  plugins: [
+    // ssr: false to only include it on client-side
+    { src: '~/plugins/vue-notifications.js', ssr: false }
+  ],
   env: {
     users: [
       { id: 1, name: 'Kobe Bryant', number: 24 },

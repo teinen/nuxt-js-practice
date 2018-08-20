@@ -1,12 +1,9 @@
 <template>
   <div class="container">
-    <!-- <div class="content">
-      <h1 class="title">Custom CSS!</h1>
-      <p><nuxt-link to="/about" class="button is-medium is-primary hvr-float-shadow">I am a button</nuxt-link></p>
-      <p><nuxt-link to="/about">About page</nuxt-link></p>
-    </div> -->
+    <p><button @click="showLoginError">Notify me!</button></p>
+    <p>Home - <nuxt-link to="/about">About</nuxt-link></p>
 
-    <div class="left">
+    <!-- <div class="left">
       <h2><nuxt-link to="/">Players</nuxt-link></h2>
       <ul class="players">
         <li v-for="user in users" :key="user.id">
@@ -16,7 +13,7 @@
     </div>
     <div class="right">
       <nuxt-child :key="$route.params.id"/>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -24,6 +21,13 @@
 import axios from 'axios'
 
 export default {
+  notifications: {
+    showLoginError: {
+      title: 'Welcome!',
+      message: 'Hello from nuxt.js',
+      type: 'info'
+    }
+  },
   async asyncData ({ env }) {
     const { data } = await axios.get(`https://jsonplaceholder.typicode.com/users`)
     return { users: env.users }
